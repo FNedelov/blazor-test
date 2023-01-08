@@ -1,10 +1,8 @@
-﻿@using Microsoft.AspNetCore.Components.Authorization
-@inject AuthenticationStateProvider _AuthStateProvider
-
+﻿@inject Services.AuthenticatorService _authenticatorService
 <CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
-            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
             <FocusOnNavigate RouteData="@routeData" Selector="h1" />
         </Found>
         <NotFound>
@@ -15,3 +13,18 @@
         </NotFound>
     </Router>
 </CascadingAuthenticationState>
+
+@code {
+    [Parameter]
+    public string WindowsUser { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        //new UserData { Name = "user1", Roles = "user" },
+        //new UserData { Name = "admin1", Roles = "admin" },
+        //new UserData { Name = "batman", Roles = "admin, batman" }
+
+        await _authenticatorService.SetAuthInfo("batman");
+        //await _authenticatorService.SetAuthInfo(WindowsUser);
+        await base.OnInitializedAsync();
+    }
+}
