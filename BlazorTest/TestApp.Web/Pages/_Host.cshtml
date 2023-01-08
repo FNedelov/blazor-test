@@ -3,6 +3,11 @@
 @namespace TestApp.Web.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+    var windowsUser = HttpContext.User?.Identity?.Name;
+    windowsUser = windowsUser?.Substring(windowsUser.IndexOf(@"\") + 1);
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +21,7 @@
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
-    <component type="typeof(App)" render-mode="ServerPrerendered" />
+    <component type="typeof(App)" param-WindowsUser="windowsUser" render-mode="ServerPrerendered" />
 
     <div id="blazor-error-ui">
         <environment include="Staging,Production">

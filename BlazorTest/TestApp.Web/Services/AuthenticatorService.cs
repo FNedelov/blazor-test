@@ -20,6 +20,7 @@ namespace TestApp.Web.Services
 
         public async Task SetAuthInfo(string userName)
         {
+#warning get here the roles!!!
             UserData? user = _users.Where(x => x.Name == userName).FirstOrDefault();
             await _custAuthProvider.SetAuthInfo(user);
         }

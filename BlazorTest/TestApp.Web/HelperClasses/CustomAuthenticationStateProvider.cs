@@ -16,7 +16,7 @@ namespace TestApp.Web.HelperClasses
 
         public async Task SetAuthInfo(UserData? user)
         {
-            if(user == null)
+            if (user == null)
             {
                 _claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity());
             }
