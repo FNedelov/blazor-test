@@ -63,11 +63,12 @@ Welcome to your new app.
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-        if (user.Identity.IsAuthenticated)
+        var userAuthenticated = user?.Identity?.IsAuthenticated ?? false;
+        if (userAuthenticated)
         {
-            _authMessage = $"{user.Identity.Name} is authenticated.";
-            _claims = user.Claims;
-            _surnameMessage = $"Surname: {user.FindFirst(c => c.Type == ClaimTypes.Surname)?.Value}";
+            _authMessage = $"{user?.Identity?.Name} is authenticated.";
+            _claims = user?.Claims ?? Enumerable.Empty<Claim>();
+            _surnameMessage = $"Surname: {user?.FindFirst(c => c.Type == ClaimTypes.Surname)?.Value}";
         }
         else
         {
