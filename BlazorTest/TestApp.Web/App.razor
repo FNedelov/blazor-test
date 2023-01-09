@@ -23,8 +23,11 @@
         //new UserData { Name = "admin1", Roles = "admin" },
         //new UserData { Name = "batman", Roles = "admin, batman" }
 
+        //await _authenticatorService.SetAuthInfo("batman");
+        //await _authenticatorService.SetAuthInfo("user1");
         await _authenticatorService.SetAuthInfo("batman");
         //await _authenticatorService.SetAuthInfo(WindowsUser);
-        await base.OnInitializedAsync();
+        #warning delete???
+        //await base.OnInitializedAsync();
     }
 }

@@ -8,9 +8,9 @@ namespace TestApp.Web.Services
         CustomAuthenticationStateProvider _custAuthProvider;
         private List<UserData> _users = new()
         {
-            new UserData { Name = "user1", Roles = "user" },
-            new UserData { Name = "admin1", Roles = "admin" },
-            new UserData { Name = "batman", Roles = "admin, batman" }
+            new UserData { Name = "user1", Roles = "User" },
+            new UserData { Name = "admin1", Roles = "Admin" },
+            new UserData { Name = "batman", Roles = "Batman" }
         };
 
         public AuthenticatorService(IServiceProvider serviceProvider)

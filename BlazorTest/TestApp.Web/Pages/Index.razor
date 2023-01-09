@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using System.Security.Claims;
+@using TestApp.Web.HelperClasses;
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>Index</PageTitle>
@@ -27,7 +28,7 @@ Welcome to your new app.
     </ul>
 }
 
-<AuthorizeView Roles="user">
+<AuthorizeView Roles="@($"{AppData.ROLE_ADMIN}, {AppData.ROLE_BATMAN}, {AppData.ROLE_USER}")">
     <Authorized>
         <div>You are a user!</div>
     </Authorized>
@@ -36,7 +37,7 @@ Welcome to your new app.
     </NotAuthorized>
 </AuthorizeView>
 
-<AuthorizeView Roles="admin">
+<AuthorizeView Roles="@($"{AppData.ROLE_ADMIN}, {AppData.ROLE_BATMAN}")">
     <Authorized>
         <div>You are an admin!</div>
     </Authorized>
@@ -45,7 +46,7 @@ Welcome to your new app.
     </NotAuthorized>
 </AuthorizeView>
 
-<AuthorizeView Roles="admin, batman">
+<AuthorizeView Roles="@($"{AppData.ROLE_BATMAN}")">
     <Authorized>
         <div>You are batman!</div>
     </Authorized>
