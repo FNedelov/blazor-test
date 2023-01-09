@@ -25,7 +25,7 @@ namespace TestApp.Web.HelperClasses
                 _claimsPrincipal = new ClaimsPrincipal(Authenticator.GetClaimsIdentity(user));
             }
 
-            NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
+            await Task.FromResult(() => NotifyAuthenticationStateChanged(GetAuthenticationStateAsync()));
         }
     }
 }
