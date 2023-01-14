@@ -6,7 +6,7 @@ namespace TestApp.Web.Services
     public class AuthenticatorService
     {
         private readonly CustomAuthenticationStateProvider _custAuthProvider;
-        private List<UserData> _users = new()
+        private readonly List<UserData> _users = new()
         {
             new UserData { Name = "user1", Roles = "User" },
             new UserData { Name = "admin1", Roles = "Admin" },
