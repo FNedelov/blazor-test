@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Logging", "TestApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Authentication", "TestApp.Authentication\TestApp.Authentication.csproj", "{290F530D-8F74-4681-83EA-5C676213A816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp.Web", "TestApp.Web\TestApp.Web.csproj", "{4B0750B8-25C0-48E0-A8E4-EEA824A32211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Web", "TestApp.Web\TestApp.Web.csproj", "{4B0750B8-25C0-48E0-A8E4-EEA824A32211}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
